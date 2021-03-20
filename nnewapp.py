@@ -38,7 +38,7 @@ class Predict:
             results = model(img, size=160)  # includes NMS
             results.print()
             results.save()
-            st.write("hello")
+    
             
 if __name__=='__main__':
     predictor = Predict(x)
