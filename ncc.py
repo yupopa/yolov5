@@ -39,6 +39,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
 model.results = model(image, size=640)
 model.results.save()
+st.image("results/BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
 
 
 
