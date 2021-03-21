@@ -20,17 +20,21 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
+if uploaded_file is None:
+    # Default image.
+    url = 'https://github.com/matthewbrems/streamlit-bccd/blob/master/BCCD_sample_images/BloodImage_00038_jpg.rf.6551ec67098bc650dd650def4e8a8e98.jpg?raw=true'
+    image = Image.open(requests.get(url, stream=True).raw)
 
-
-image= uploaded_file.read()
-st.image(uploaded_file, caption='Uploaded Image.')
+else:
+    # User-selected image.
+    image = Image.open(uploaded_file)
    
    
 # Convert to JPEG Buffer.
-#buffered = io.BytesIO()
-#image.save(buffered, quality=90, format='JPEG')
-#img_str = base64.b64encode(buffered.getvalue())
-#img_str = img_str.decode('ascii')
+buffered = io.BytesIO()
+image.save(buffered, quality=90, format='JPEG')
+img_str = base64.b64encode(buffered.getvalue())
+img_str = img_str.decode('ascii')
 
 
 st.write('# Blood Cell Count Object Detection')
@@ -39,8 +43,14 @@ st.write('# Blood Cell Count Object Detection')
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
-model.results = model(image, size=640)
-model.results.save()
 
+results = model(img_str)  # inference
 
+results.img_str # array of original images (as np array) passed to model for inference
+results.render()  # updates results.imgs with boxes and labels
+for img in results.img_str:
+    buffered = BytesIO()
+    img_base64 = Image.fromarray(img)
+    img_base64.save(buffered, format="JPEG")
+    print(base64.b64encode(buffered.getvalue()).decode('utf-8'))  # base64 encoded image with results
 
