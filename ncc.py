@@ -33,15 +33,12 @@ uploaded_file = st.sidebar.file_uploader('',
 ## Title.
 st.write('# Blood Cell Count Object Detection')
 
-## Pull in default image or user-selected image.
-if uploaded_file is None:
-    # Default image.
-    url = 'https://github.com/matthewbrems/streamlit-bccd/blob/master/BCCD_sample_images/BloodImage_00038_jpg.rf.6551ec67098bc650dd650def4e8a8e98.jpg?raw=true'
-    image = Image.open(requests.get(url, stream=True).raw)
 
-else:
-    # User-selected image.
-    image = Image.open(uploaded_file)
+img_file_buffer = st.file_uploader("Upload an image")
+if img_file_buffer is not None:
+    image = Image.open(img_file_buffer)
+    img_array = np.array(image) # if you want to pass it to OpenCV
+    st.image(image, caption="The caption", use_column_width=True)
 
 ## Subtitle.
 st.write('### Inferenced Image')
