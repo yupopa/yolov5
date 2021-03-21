@@ -52,9 +52,14 @@ if image is not None:
 
 
 # Convert to JPEG Buffer.
-buffered = io.BytesIO()
-image.save(buffered, quality=90, format='JPEG')
+#buffered = io.BytesIO()
+#image.save(buffered, quality=90, format='JPEG')
 
+base64_decoded = base64.b64decode(test_image_base64_encoded)
+
+image = Image.open(io.BytesIO(base64_decoded))
+image_np = np.array(image)
+image_torch = torch.tensor(np.array(image))
 # Base 64 encode.
 #img_str = base64.b64encode(buffered.getvalue())
 #img_str = img_str.decode('ascii')
@@ -64,7 +69,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
 
 
-model.results = model(image, size=640)
+model.results = model(image_torch, size=640)
 results.save()
 
 
