@@ -23,7 +23,7 @@ urlretrieve(url,filename)
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
     #try the below line instead of Image.open()
-    image= uploaded_file.read()
+    image= cv2.imread(uploaded_file)
 
     st.image(image, caption='Uploaded Image.')
    
