@@ -47,15 +47,16 @@ else:
 st.write('### Inferenced Image')
 
 # Convert to JPEG Buffer.
-buffered = io.BytesIO()
-image.save(buffered, quality=90, format='JPEG')
+#buffered = io.BytesIO()
+#image.save(buffered, quality=90, format='JPEG')
 
 # Base 64 encode.
-img_str = base64.b64encode(buffered.getvalue())
-img_str = img_str.decode('ascii')
+#img_str = base64.b64encode(buffered.getvalue())
+#img_str = img_str.decode('ascii')
 
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
+
 
 
 model.results = model(image, size=640)
@@ -63,8 +64,8 @@ results.save()
 
 
 # Convert to JPEG Buffer.
-buffered = io.BytesIO()
-image.save(buffered, quality=90, format='JPEG')
+#buffered = io.BytesIO()
+#image.save(buffered, quality=90, format='JPEG')
 
 # Display image.
 st.image(image,
