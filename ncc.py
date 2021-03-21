@@ -24,9 +24,17 @@ urlretrieve(url,filename)
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
     #try the below line instead of Image.open()
-    image= cv2.imread("uploaded_file")
+  # This portion is part of my test code
+    byteImgIO = io.BytesIO()
+    byteImg = Image.open(uploaded_file)
+    byteImg.save(byteImgIO, "JPG")
+    byteImgIO.seek(0)
+    byteImg = byteImgIO.read()
 
-    st.image(image, caption='Uploaded Image.')
+
+# Non test code
+    dataBytesIO = io.BytesIO(byteImg)
+    Image.open(dataBytesIO)
    
 
 # Convert to JPEG Buffer.
