@@ -36,6 +36,8 @@ else:
 # Convert to JPEG Buffer.
 buffered = io.BytesIO()
 image.save(buffered, quality=90, format='JPEG')
+img_str = base64.b64encode(buffered.getvalue())
+img_str = img_str.decode('ascii')
 
 
 st.write('# Blood Cell Count Object Detection')
@@ -44,7 +46,7 @@ st.write('# Blood Cell Count Object Detection')
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
-model.results = model(image, size=640)
+model.results = model(img_str, size=640)
 model.results.save()
 
 
