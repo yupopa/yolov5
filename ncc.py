@@ -31,7 +31,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 with torch.no_grad():
     output=model(image)
 output0= output[0]
-print(output0)
+st.write(print(output0))
 
     
     
