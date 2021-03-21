@@ -24,10 +24,16 @@ uploaded_file = st.sidebar.file_uploader('',
 
 
 
-image = Image.open(uploaded_file)
 
 
+if uploaded_file is None:
+    # Default image.
+    url = 'https://github.com/matthewbrems/streamlit-bccd/blob/master/BCCD_sample_images/BloodImage_00038_jpg.rf.6551ec67098bc650dd650def4e8a8e98.jpg?raw=true'
+    image = Image.open(requests.get(url, stream=True).raw)
 
+else:
+    # User-selected image.
+    image = Image.open(uploaded_file)
 
 ##########
 ##### Set up main app.
