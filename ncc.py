@@ -33,10 +33,6 @@ with torch.no_grad():
 output0= output[0]
 st.write(print(output0))
 
-    
-    
-r = requests.get("http://<streamlit.uploaded_file_manager.UploadedFile", stream=True)
-image = Image.open(io.BytesIO(r.content))
 
 
     
