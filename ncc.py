@@ -17,30 +17,14 @@ import torch
 uploaded_file = st.file_uploader('', type=['png', 'jpg', 'jpeg'],accept_multiple_files=False)
 
 
-
 if uploaded_file is None:
     # Default image.
-  image = Image.open("BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
-
-    
-  model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
-
-
-
-  model.results = model(image, size=640)
-  model.results.save()
-
+    url = 'https://github.com/matthewbrems/streamlit-bccd/blob/master/BCCD_sample_images/BloodImage_00038_jpg.rf.6551ec67098bc650dd650def4e8a8e98.jpg?raw=true'
+    image = Image.open(requests.get(url, stream=True).raw)
 
 else:
     # User-selected image.
-  image = Image.open(uploaded_file)
-  model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
-
-
-
-  model.results = model(image, size=640)
-  model.results.save()
-  
+    image = Image.open(uploaded_file)
 ## Title.
 st.write('# Blood Cell Count Object Detection')
 
