@@ -31,6 +31,12 @@ if uploaded_file is None:
 else:
 
    image = Image.open(uploaded_file)
+   
+   
+# Convert to JPEG Buffer.
+buffered = io.BytesIO()
+image.save(buffered, quality=90, format='JPEG')
+
 
 st.write('# Blood Cell Count Object Detection')
 
