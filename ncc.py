@@ -69,6 +69,7 @@ model.autoshape()
 
 
 model.results = model(image)
+st.image(image)
 
 
 
