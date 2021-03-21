@@ -52,8 +52,8 @@ if image is not None:
 
 
 # Convert to JPEG Buffer.
-#buffered = io.BytesIO()
-#image.save(buffered, quality=90, format='JPEG')
+buffered = io.BytesIO()
+image.save(buffered, quality=90, format='JPEG')
 
 # Base 64 encode.
 #img_str = base64.b64encode(buffered.getvalue())
