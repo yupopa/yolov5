@@ -6,12 +6,9 @@ import torch
 from urllib.request import urlretrieve
 from PIL import Image
 import streamlit as st
-import streamlit as st
-import requests
 import base64
 import io
 from PIL import Image
-import glob
 from base64 import decodebytes
 from io import BytesIO
 import numpy as np
