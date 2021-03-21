@@ -9,6 +9,7 @@ from io import BytesIO
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
+from urllib.request import urlretrieve
 
 ##########
 ##### Set up sidebar.
