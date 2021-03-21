@@ -14,6 +14,7 @@ torchvision>=0.8.1
 tqdm>=4.41.0
 fastai==2.2.7
 rawkit
+keras
 tensorflow
 streamlit==0.76.0
 requests
