@@ -35,7 +35,10 @@ st.write(print(output0))
 
     
     
-    
+r = requests.get(uploaded_file, stream=True)
+image = Image.open(io.BytesIO(r.content))
+
+
     
     
     
