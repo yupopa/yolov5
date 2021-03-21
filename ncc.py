@@ -46,7 +46,7 @@ st.write('# Blood Cell Count Object Detection')
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
-model.results = model(img_str, size=640)
+model.results = model(image, size=640)
 model.results.save()
 
 
