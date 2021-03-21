@@ -30,14 +30,14 @@ if uploaded_file is None:
 
 else:
 
-   image = Image.open(uploaded_file)
+    image= uploaded_file.read()
    
    
 # Convert to JPEG Buffer.
-buffered = io.BytesIO()
-image.save(buffered, quality=90, format='JPEG')
-img_str = base64.b64encode(buffered.getvalue())
-img_str = img_str.decode('ascii')
+#buffered = io.BytesIO()
+#image.save(buffered, quality=90, format='JPEG')
+#img_str = base64.b64encode(buffered.getvalue())
+#img_str = img_str.decode('ascii')
 
 
 st.write('# Blood Cell Count Object Detection')
