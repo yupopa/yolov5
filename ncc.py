@@ -1,5 +1,4 @@
 import torch
-import streamlit as st
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model='best.pt')
 
