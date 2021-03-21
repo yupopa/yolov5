@@ -14,7 +14,7 @@ import torch
 
 
 st.sidebar.write('#### Select an image to upload.')
-uploaded_file = st.sidebar.file_uploader('',
+uploaded_file = st.file_uploader('',
                                          type=['png', 'jpg', 'jpeg'],
                                          accept_multiple_files=False)
 
