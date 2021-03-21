@@ -28,9 +28,7 @@ if uploaded_file is not None:
     image = image.float()/255
     
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
-
-    
- with torch.no_grad():
+with torch.no_grad():
     output=model(image)
 output0= output[0]
 print(output0)
