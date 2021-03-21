@@ -35,7 +35,7 @@ st.write(print(output0))
 
     
     
-r = requests.get("http://<streamlit.uploaded_file_manager.UploadedFile object at 0x7f04a32327d0>?", stream=True)
+r = requests.get("http://<streamlit.uploaded_file_manager.UploadedFile", stream=True)
 image = Image.open(io.BytesIO(r.content))
 
 
