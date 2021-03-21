@@ -41,8 +41,8 @@ if uploaded_file is not None:
 
 
 # Non test code
-    dataBytesIO = io.BytesIO(byteImg)
-    Image.open(dataBytesIO)
+   # dataBytesIO = io.BytesIO(byteImg)
+   # Image.open(dataBytesIO)
    
 
 # Convert to JPEG Buffer.
