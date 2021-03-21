@@ -18,8 +18,7 @@ urlretrieve(url,filename)
 
 
 
-
-uploaded_file = st.file_uploader('', type=['png', 'jpg', 'jpeg'],accept_multiple_files=False)
+uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
 
 if uploaded_file is None:
