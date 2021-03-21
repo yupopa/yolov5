@@ -68,11 +68,10 @@ img_str = img_str.decode('ascii')
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
------------------------------------------------------
+
 model.results = model(image, size=640)
 results.save()
 
-image = Image.open(BytesIO(r.content))
 
 # Convert to JPEG Buffer.
 buffered = io.BytesIO()
@@ -82,7 +81,6 @@ image.save(buffered, quality=90, format='JPEG')
 st.image(image,
          use_column_width=True)
 
-----------------------------------------------------------
 
 output_dict = r.json()
 
