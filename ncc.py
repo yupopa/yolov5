@@ -23,7 +23,17 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
-    image = PILImage.create((uploaded_file))
+    image = Image.open((uploaded_file).resize(640,480), Image.ANTIALIAS)
+    image = torch.tensor(np.array(image)).permute((2,0,1)).unsqueeze(0)
+    image = image.float()/255
+    
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
+
+    
+ with torch.no_grad():
+    output=model(image)
+output0= output[0]
+print(output0)
 
     
     
