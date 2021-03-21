@@ -9,6 +9,7 @@ from io import BytesIO
 import numpy as np
 import matplotlib.pyplot as plt
 import torch
+from urllib.request import urlretrieve
 
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
