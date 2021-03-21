@@ -23,7 +23,7 @@ uploaded_file = st.sidebar.file_uploader('',
 
 
 if uploaded_file is None:
-  return None
+ image = Image.open("BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
 
 else:
   # User-selected image.
