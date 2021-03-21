@@ -20,10 +20,7 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
-@st.cache
-def load_image(uploaded_file):
-	image = Image.open(uploaded_file)
-	return image
+
 
 
 if uploaded_file is None:
@@ -31,7 +28,8 @@ if uploaded_file is None:
    image = Image.open(requests.get(url, stream=True).raw)
 
 else:
-   image = Image.open(image)
+
+   image = Image.open(uploaded_file)
 
 st.write('# Blood Cell Count Object Detection')
 
