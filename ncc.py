@@ -23,7 +23,7 @@ urlretrieve(url,filename)
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
     #try the below line instead of Image.open()
-    image = PILImage.create((uploaded_file))
+    image= uploaded_file.read()
 
     st.image(image, caption='Uploaded Image.')
    
