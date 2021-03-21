@@ -33,6 +33,7 @@ if uploaded_file is None:
 
 else:
     # User-selected image.
+    image= uploaded_file.read()
     image = Image.open(uploaded_file)
 
 ##########
