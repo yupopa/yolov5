@@ -23,13 +23,21 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
+    image = PILImage.create((uploaded_file))
+
+    
+    
+    
+    
+    
+    
     #try the below line instead of Image.open()
   # This portion is part of my test code
-    byteImgIO = io.BytesIO()
-    byteImg = Image.open(uploaded_file)
-    byteImg.save(byteImgIO, "PNG")
-    byteImgIO.seek(0)
-    byteImg = byteImgIO.read()
+   # byteImgIO = io.BytesIO()
+    #byteImg = Image.open(uploaded_file)
+    #byteImg.save(byteImgIO, "PNG")
+   # byteImgIO.seek(0)
+   # byteImg = byteImgIO.read()
 
 
 # Non test code
@@ -49,9 +57,10 @@ st.write('# Blood Cell Count Object Detection')
 
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
+model.autoshape()
 
 
-model.results = model(byteImg)
+model.results = model(image)
 
 
 
