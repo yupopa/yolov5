@@ -22,6 +22,8 @@ uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
     #try the below line instead of Image.open()
     image= uploaded_file.read()
+    buffered = io.BytesIO()
+    image.save(buffered, quality=90, format="JPEG")
 
     st.image(image, caption='Uploaded Image.')
    
