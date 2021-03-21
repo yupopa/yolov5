@@ -202,7 +202,6 @@ class autoShape(nn.Module):
             if isinstance(im, str):  # filename or uri
                 im, f = Image.open(requests.get(im, stream=True).raw if im.startswith('http') else im), im  # open
                 im.filename = f  # for uri
-            files.append(Path(im.filename).with_suffix('.jpg').name if isinstance(im, Image.Image) else f'image{i}.jpg')
             im = np.array(im)  # to numpy
             if im.shape[0] < 5:  # image in CHW
                 im = im.transpose((1, 2, 0))  # reverse dataloader .transpose(2, 0, 1)
