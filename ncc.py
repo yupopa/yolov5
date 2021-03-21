@@ -29,12 +29,12 @@ else:
     # User-selected image.
     image = Image.open(uploaded_file)
    
-   
+
 # Convert to JPEG Buffer.
-buffered = io.BytesIO()
-image.save(buffered, quality=90, format='JPEG')
-img_str = base64.b64encode(buffered.getvalue())
-img_str = img_str.decode('ascii')
+#buffered = io.BytesIO()
+#image.save(buffered, quality=90, format='JPEG')
+#img_str = base64.b64encode(buffered.getvalue())
+#img_str = img_str.decode('ascii')
 
 
 st.write('# Blood Cell Count Object Detection')
@@ -44,13 +44,7 @@ st.write('# Blood Cell Count Object Detection')
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
 
-results = model(img_str)  # inference
+model.results = model(image)
 
-results.img_str # array of original images (as np array) passed to model for inference
-results.render()  # updates results.imgs with boxes and labels
-for img in results.img_str:
-    buffered = BytesIO()
-    img_base64 = Image.fromarray(img)
-    img_base64.save(buffered, format="JPEG")
-    print(base64.b64encode(buffered.getvalue()).decode('utf-8'))  # base64 encoded image with results
+
 
