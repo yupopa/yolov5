@@ -27,7 +27,7 @@ if uploaded_file is not None:
   # This portion is part of my test code
     byteImgIO = io.BytesIO()
     byteImg = Image.open(uploaded_file)
-    byteImg.save(byteImgIO, "JPG")
+    byteImg.save(byteImgIO, "PNG")
     byteImgIO.seek(0)
     byteImg = byteImgIO.read()
 
