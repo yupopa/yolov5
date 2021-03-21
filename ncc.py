@@ -48,7 +48,7 @@ st.write('# Blood Cell Count Object Detection')
 
 
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 
 
 model.results = model(byteImg)
