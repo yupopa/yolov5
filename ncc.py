@@ -34,12 +34,12 @@ st.write('# Blood Cell Count Object Detection')
 
 
 # Convert to JPEG Buffer.
-#buffered = io.BytesIO()
-#image.save(buffered, quality=90, format='JPEG')
+buffered = io.BytesIO()
+image.save(buffered, quality=90, format='JPEG')
 
 # Base 64 encode.
-#img_str = base64.b64encode(buffered.getvalue())
-#img_str = img_str.decode('ascii')
+img_str = base64.b64encode(buffered.getvalue())
+img_str = img_str.decode('ascii')
 
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
@@ -51,8 +51,8 @@ model.results.save()
 
 
 # Convert to JPEG Buffer.
-#buffered = io.BytesIO()
-#image.save(buffered, quality=90, format='JPEG')
+buffered = io.BytesIO()
+image.save(buffered, quality=90, format='JPEG')
 
 # Display image.
 st.image(image,
