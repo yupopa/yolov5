@@ -19,7 +19,7 @@ urlretrieve(url,filename)
 
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
-uploaded_name = uploaded_file.name
+uploaded_name = st.uploaded_file.name
 
 
 
