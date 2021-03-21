@@ -10,6 +10,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 from urllib.request import urlretrieve
+from fastai.vision.widgets import *
+from fastai.vision.all import *
 
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
@@ -21,9 +23,7 @@ urlretrieve(url,filename)
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
     #try the below line instead of Image.open()
-    image= uploaded_file.read()
-    buffered = io.BytesIO()
-    image.save(buffered, quality=90, format="JPEG")
+    image = PILImage.create((uploaded_file))
 
     st.image(image, caption='Uploaded Image.')
    
