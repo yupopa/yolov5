@@ -11,9 +11,9 @@ import matplotlib.pyplot as plt
 import torch
 
 
-import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
+filename = "best.pt"
+urlretrieve(url,filename)
 
 
 
