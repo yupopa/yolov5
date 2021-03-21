@@ -55,11 +55,6 @@ if image is not None:
 #buffered = io.BytesIO()
 #image.save(buffered, quality=90, format='JPEG')
 
-base64_decoded = base64.b64decode(test_image_base64_encoded)
-
-image = Image.open(io.BytesIO(base64_decoded))
-image_np = np.array(image)
-image_torch = torch.tensor(np.array(image))
 # Base 64 encode.
 #img_str = base64.b64encode(buffered.getvalue())
 #img_str = img_str.decode('ascii')
