@@ -35,11 +35,9 @@ st.write('# Blood Cell Count Object Detection')
 
 
 img_file_buffer = st.file_uploader("Upload an image")
-if img_file_buffer is not None:
-    image = Image.open(img_file_buffer)
-    img_array = np.array(image) # if you want to pass it to OpenCV
-    st.image(image, caption="The caption", use_column_width=True)
-
+image = Image.open(img_file_buffer)
+img_array = np.array(image) # if you want to pass it to OpenCV
+st.image(image, caption="The caption", use_column_width=True)
 ## Subtitle.
 st.write('### Inferenced Image')
 
