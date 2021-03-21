@@ -37,9 +37,9 @@ class Predict:
 
     def display_output(self):
         st.image(self.img.to_thumb(500,500), caption='Uploaded Image')
-         results = model(img, size=160)  # includes NMS
-         results.print()
-         results.save()
+        results = model(img, size=160)  # includes NMS
+        results.print()
+        results.save()
 
 if __name__=='__main__':
     predictor = Predict(filename)
