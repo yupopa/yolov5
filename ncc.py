@@ -11,11 +11,7 @@ import matplotlib.pyplot as plt
 import torch
 
 
-##########
-##### Set up sidebar.
-##########
 
-# Add in location to select image.
 
 st.sidebar.write('#### Select an image to upload.')
 uploaded_file = st.sidebar.file_uploader('',
@@ -27,18 +23,13 @@ uploaded_file = st.sidebar.file_uploader('',
 
 
 if uploaded_file is None:
-    # Default image.
-    url = 'https://github.com/matthewbrems/streamlit-bccd/blob/master/BCCD_sample_images/BloodImage_00038_jpg.rf.6551ec67098bc650dd650def4e8a8e98.jpg?raw=true'
-    image = Image.open(requests.get(url, stream=True).raw)
+  return None
 
 else:
-    # User-selected image.
-    image= uploaded_file.read()
-    image = Image.open(uploaded_file)
+  # User-selected image.
+  image= uploaded_file.read()
+  image = Image.open(uploaded_file)
 
-##########
-##### Set up main app.
-##########
 
 ## Title.
 st.write('# Blood Cell Count Object Detection')
