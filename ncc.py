@@ -12,6 +12,7 @@ import torch
 from urllib.request import urlretrieve
 from fastai.vision.widgets import *
 from fastai.vision.all import *
+import cv2
 
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
