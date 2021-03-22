@@ -88,7 +88,7 @@ model.autoshape()
 #im2.putdata(numpy.reshape(data, [n, 1]))
 #im2.show()
 
-model.results = model(image)
+model.results = model(imagee)
 
 
 
