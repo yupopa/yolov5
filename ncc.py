@@ -25,7 +25,7 @@ urlretrieve(url,filename)
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
 if uploaded_file is not None:
-    image = Image.open((uploaded_file))
+    image = Image.open(uploaded_file)
 
     
     
@@ -42,7 +42,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 
    
 
-model.results = model(im2,size=320)
+model.results = model(image,size=320)
 
 
 
