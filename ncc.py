@@ -87,7 +87,7 @@ model.autoshape()
 #im2.putdata(numpy.reshape(data, [n, 1]))
 #im2.show()
 
-model.results = model(uploaded_file)
+model.results = model(uploaded_file,size=320)
 
 
 
