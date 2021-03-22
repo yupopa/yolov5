@@ -26,11 +26,14 @@ uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
+    img_array = np.array(image)
+m
 
-    
-    
-    
-    
+
+
+
+
+
     
 
 
@@ -38,11 +41,14 @@ if uploaded_file is not None:
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 
 
+model.results = model(img_array, size=640)
 
+
+model.results.save()  # or .show()
 
    
 
-model.results = model(image,size=320)
+
 
 
 
