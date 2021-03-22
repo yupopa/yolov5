@@ -39,21 +39,10 @@ if uploaded_file is None:
 else:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
-    
-
-
-    
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
-
-
-model.results = model(img_array, size=640)
-
-
-model.results.save()  # or .show()
-st.image("results/image0.jpg")
-
-   
-
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
+    model.results = model(img_array, size=640)
+    model.results.save()  # or .show()
+    st.image("results/image0.jpg")
 
 
 
