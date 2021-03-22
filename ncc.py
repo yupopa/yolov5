@@ -27,7 +27,7 @@ uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
-m
+
 
 
 
