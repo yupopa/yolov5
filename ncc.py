@@ -48,7 +48,7 @@ else:
     for i in model.results.xywh:
         for j in i:
             liste.append(j)
-    st.write("there is",len(liste)," object in this image")
+    st.write("there are",len(liste)," objects in this image")
 
 
 
