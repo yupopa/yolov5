@@ -20,7 +20,10 @@ url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
 filename = "best.pt"
 urlretrieve(url,filename)
 
-
+urll = ("http://dl.dropboxusercontent.com/s/ecl4tj6q2u8s4q3/fig-03_5.png?raw=1")
+filenamee = "fig-03_5.png"
+urlretrieve(urll,filenamee)
+st.image(filenamee)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
