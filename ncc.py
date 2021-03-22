@@ -40,54 +40,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 
 
 
-    
-    
-    
-    #try the below line instead of Image.open()
-  # This portion is part of my test code
-   # byteImgIO = io.BytesIO()
-    #byteImg = Image.open(uploaded_file)
-    #byteImg.save(byteImgIO, "PNG")
-   # byteImgIO.seek(0)
-   # byteImg = byteImgIO.read()
-
-
-# Non test code
-   # dataBytesIO = io.BytesIO(byteImg)
-   # Image.open(dataBytesIO)
    
-
-# Convert to JPEG Buffer.
-#buffered = io.BytesIO()
-#image.save(buffered, quality=90, format='JPEG')
-#img_str = base64.b64encode(buffered.getvalue())
-#img_str = img_str.decode('ascii')
-
-
-st.write('# Blood Cell Count Object Detection')
-
-
-#buffered = io.BytesIO()
-#image.save(buffered, quality=90, format='JPEG')
-
-
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
-model.autoshape()
-data = numpy.array(image)
-im = Image.open(image)
-im = im.convert("1")
-
-pixels = im.getdata() # returns 1D list of pixels
-n = len(pixels)
-data = numpy.reshape(pixels, im.size) # turn into 2D numpy array
-
-for row in data:
-    pass
-
-# Check that the numpy array's data is good
-im2 = Image.new("1", im.size)
-im2.putdata(numpy.reshape(data, [n, 1]))
-
 
 model.results = model(im2,size=320)
 
