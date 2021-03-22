@@ -82,7 +82,6 @@ n = len(pixels)
 data = numpy.reshape(pixels, im.size) # turn into 2D numpy array
 
 for row in data:
-    do your processing
     pass
 
 # Check that the numpy array's data is good
