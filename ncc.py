@@ -43,7 +43,6 @@ else:
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
-    st.write(model.results)  
 
 
 
