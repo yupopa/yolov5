@@ -92,7 +92,7 @@ model.autoshape()
 #im2.putdata(numpy.reshape(data, [n, 1]))
 #im2.show()
 
-model.results = model(image,size=320)
+model.results = model((image),size=320)
 
 
 
