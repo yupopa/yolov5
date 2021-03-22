@@ -24,9 +24,8 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
-#if uploaded_file is not None:
-  #  image = Image.open(uploaded_file)
-   # img = cv2.imread(image)
+if uploaded_file is not None:
+    image = Image.open((uploaded_file))
 
     
     
@@ -88,7 +87,7 @@ model.autoshape()
 #im2.putdata(numpy.reshape(data, [n, 1]))
 #im2.show()
 
-model.results = model(uploaded_filee)
+model.results = model(uploaded_file)
 
 
 
