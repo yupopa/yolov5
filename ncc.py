@@ -31,34 +31,10 @@ if uploaded_file is not None:
     
     
 
-import tensorflow as tf
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array, array_to_img
-from matplotlib import pyplot as plt
-import numpy as np
-
-def load_file_and_process(path):
-    image = load_img(bytes.decode(path.numpy()), target_size=(224, 224))
-    image = img_to_array(image)
-    image = tf.image.central_crop(image, np.random.uniform(0.50, 1.00))
-    return imagee
-
-train_dataset = tf.data.Dataset.list_files(image)
-train_dataset = train_dataset.map(lambda x: tf.py_function(load_file_and_process, [x], [tf.float32]))
-
-for f in train_dataset:
-  for l in f:
-    image = np.array(array_to_img(l))
-    plt.imshow(imagee)
-    
-    
 
     
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
-with torch.no_grad():
-    output=model(image)
-output0= output[0]
-st.write(print(output0))
+
 
 
 
