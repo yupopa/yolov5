@@ -24,6 +24,7 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
+    image = image.open(uploaded_file)
 
     image = Image.Image.load(uploaded_file)
     
