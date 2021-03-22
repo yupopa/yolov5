@@ -71,12 +71,6 @@ from PIL import Image
 from io import BytesIO    
 buffered = io.BytesIO()
 image.save(buffered, quality=90, format='JPEG')
-img = Image.open(BytesIO(uploaded_file))
-img2 = img.crop((1,20,50,80))
-
-b = BytesIO()
-img2.save(b,format="jpeg")
-img3 = Image.open(b)
 
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
@@ -98,7 +92,7 @@ model.autoshape()
 #im2.putdata(numpy.reshape(data, [n, 1]))
 #im2.show()
 
-model.results = model(img3,size=320)
+model.results = model(image,size=320)
 
 
 
