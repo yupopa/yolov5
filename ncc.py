@@ -44,6 +44,11 @@ else:
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
     model.results.print()
+    liste = []
+    for i in model.results.xywh:
+        for j in i:
+            liste.append(j)
+    st.write(len(liste))
 
 
 
