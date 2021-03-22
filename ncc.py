@@ -70,11 +70,10 @@ st.write('# Blood Cell Count Object Detection')
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 model.autoshape()
 img = cv2.imread(image)
-predictions = yolov5s(img)
 
 
-model.results = model(image)
-st.image(image)
+model.results = model(img)
+st.image(img)
 
 
 
