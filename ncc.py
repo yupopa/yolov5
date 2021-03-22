@@ -6,7 +6,7 @@ from PIL import Image
 import glob
 from base64 import decodebytes
 from io import BytesIO
-import numpy as np
+import numpy
 import matplotlib.pyplot as plt
 import torch
 from urllib.request import urlretrieve
