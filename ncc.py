@@ -26,7 +26,7 @@ uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    img = cv2.imread(image)[:,:,::-1] 
+    img = cv2.imread(image)
 
     
     
@@ -88,7 +88,7 @@ model.autoshape()
 #im2.putdata(numpy.reshape(data, [n, 1]))
 #im2.show()
 
-model.results = model(imagee)
+model.results = model(image)
 
 
 
