@@ -24,8 +24,8 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    image = Image.Image.load(image)
+
+    image = Image.Image.load(uploaded_file)
     
     
     
@@ -69,26 +69,25 @@ st.write('# Blood Cell Count Object Detection')
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 model.autoshape()
-data = numpy.array(image)
+#data = numpy.array(image)
+#im = Image.open(image)
+#im = im.convert("1")
 
-im = Image.open(image)
-im = im.convert("1")
+#pixels = im.getdata() # returns 1D list of pixels
+#n = len(pixels)
+#data = numpy.reshape(pixels, im.size) # turn into 2D numpy array
 
-pixels = im.getdata() # returns 1D list of pixels
-n = len(pixels)
-data = numpy.reshape(pixels, im.size) # turn into 2D numpy array
-
-for row in data:
+#for row in data:
     # do your processing
-    pass
+    #pass
 
 # Check that the numpy array's data is good
-im2 = Image.new("1", im.size)
-im2.putdata(numpy.reshape(data, [n, 1]))
-im2.show()
+#im2 = Image.new("1", im.size)
+#im2.putdata(numpy.reshape(data, [n, 1]))
+#im2.show()
 
-model.results = model(img)
-st.image(img)
+model.results = model(image)
+
 
 
 
