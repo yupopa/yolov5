@@ -13,6 +13,7 @@ from urllib.request import urlretrieve
 from fastai.vision.widgets import *
 from fastai.vision.all import *
 import cv2
+from yolov5 import yolov5s
 
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
@@ -68,6 +69,8 @@ st.write('# Blood Cell Count Object Detection')
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 model.autoshape()
+img = cv2.imread(image)
+predictions = yolov5s(img)
 
 
 model.results = model(image)
