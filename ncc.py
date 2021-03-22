@@ -69,8 +69,23 @@ st.write('# Blood Cell Count Object Detection')
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
 model.autoshape()
-img = cv2.imread(image)
+data = numpy.array(image)
 
+im = Image.open(image)
+im = im.convert("1")
+
+pixels = im.getdata() # returns 1D list of pixels
+n = len(pixels)
+data = numpy.reshape(pixels, im.size) # turn into 2D numpy array
+
+for row in data:
+    # do your processing
+    pass
+
+# Check that the numpy array's data is good
+im2 = Image.new("1", im.size)
+im2.putdata(numpy.reshape(data, [n, 1]))
+im2.show()
 
 model.results = model(img)
 st.image(img)
