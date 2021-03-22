@@ -69,7 +69,8 @@ st.write('# Blood Cell Count Object Detection')
 import requests
 from PIL import Image
 from io import BytesIO    
-
+buffered = io.BytesIO()
+image.save(buffered, quality=90, format='JPEG')
 img = Image.open(BytesIO(uploaded_file))
 img2 = img.crop((1,20,50,80))
 
