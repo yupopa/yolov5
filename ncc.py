@@ -24,7 +24,7 @@ urlretrieve(url,filename)
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
-    image = cv2.imread('/content/train/images/BloodImage_00005_jpg.rf.afec71a42b010caf06c855e59d931899.jpg')[:,:,::-1] 
+    image = cv2.imread(uploaded_file)[:,:,::-1] 
 
     
     
