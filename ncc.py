@@ -24,8 +24,8 @@ urlretrieve(url,filename)
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    image = torch.tensor(np.array(image)).permute((2,0,1)).unsqueeze(0)
-    image = image.float()/255
+    image = Image.Image.load()
+    
     
     
     
