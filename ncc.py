@@ -60,7 +60,7 @@ else:
     st.image("results/image0.jpg")
     model.results.print()
     
-    output =  model.results.print()
+    output =  model.results.print
 
     with st_capture(output.code):
         print(output)
