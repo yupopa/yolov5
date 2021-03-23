@@ -62,7 +62,7 @@ else:
     
     output =  model.results.print
 
-    with st_capture(output.code):
+    with st_capture(output):
         print(output)
     
     liste = []
