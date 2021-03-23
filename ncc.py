@@ -13,8 +13,23 @@ from urllib.request import urlretrieve
 from fastai.vision.widgets import *
 from fastai.vision.all import *
 import cv2
+from contextlib import contextmanager, redirect_stdout
+from io import StringIO
+from time import sleep
+import streamlit as st
 
+@contextmanager
+def st_capture(output_func):
+    with StringIO() as stdout, redirect_stdout(stdout):
+        old_write = stdout.write
 
+        def new_write(string):
+            ret = old_write(string)
+            output_func(stdout.getvalue())
+            return ret
+        
+        stdout.write = new_write
+        yield
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
 filename = "best.pt"
