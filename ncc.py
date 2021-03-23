@@ -18,18 +18,6 @@ from io import StringIO
 from time import sleep
 import streamlit as st
 
-@contextmanager
-def st_capture(output_func):
-    with StringIO() as stdout, redirect_stdout(stdout):
-        old_write = stdout.write
-
-        def new_write(string):
-            ret = old_write(string)
-            output_func(stdout.getvalue())
-            return ret
-        
-        stdout.write = new_write
-        yield
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
 filename = "best.pt"
@@ -60,10 +48,8 @@ else:
     st.image("results/image0.jpg")
     model.results.print()
     
-    output =  model.results.print
 
-    with st_capture(output):
-        print(output)
+    
     
     liste = []
     for i in model.results.xywh:
