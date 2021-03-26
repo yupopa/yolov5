@@ -47,7 +47,7 @@ else:
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
     model.results.print()
-    model.results.xywhn
+    st.write(model.results.xywhn)
 
     
 
