@@ -67,4 +67,4 @@ else:
                 if k == 1:
                     liste2.append(j)
 
-    st.write("number of wbcs",len(liste),"number of rbcs",len(liste2))
+    st.write("number of wbc is",len(liste),"number of rbc is",len(liste2))
