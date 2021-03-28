@@ -65,4 +65,4 @@ else:
     rbc = 0; wbc = 0; plt = 0;
 
 
-    st.write("The number of detected WBC is",len(wbc),"The number of detected RBC is",len(rbc),"The number of detected PLT is",len(plt))
+    st.write("The number of detected WBC is",wbc,"The number of detected RBC is",rbc,"The number of detected PLT is",plt)
