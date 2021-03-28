@@ -47,21 +47,22 @@ else:
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
   
-    liste = []
-    liste2 = []
-    liste1 = []
-    liste0 = []
-   
+    rbc = 0 # 1
+    wbc = 0 # 2
+    plt = 0 # 3
+
     for i in model.results.xywh:
         for j in i:
-            for k in j:
-                liste.append(k)
-                if k == 2:
-                    liste2.append(k)
-                elif k ==1:
-                    liste1.append(k)
-                elif k == 0:
-                    liste0.append(k)
+            element = j[-1].item()
+            if element == 1:
+                rbc += 1
+            elif element == 2:
+                wbc += 1
+            else:
+                plt += 1
 
 
-    st.write("The number of detected WBC is",len(liste2),"The number of detected RBC is",len(liste1),"The number of detected PLT is",len(liste0))
+    rbc = 0; wbc = 0; plt = 0;
+
+
+    st.write("The number of detected WBC is",len(wbc),"The number of detected RBC is",len(rbc),"The number of detected PLT is",len(plt))
