@@ -64,4 +64,4 @@ else:
                     liste0.append(k)
 
 
-    st.write("number of wbc",len(liste2),"number of rbc",len(liste1),"number of Platelets",len(liste0))
+    st.write("The number of detected WBC is",len(liste2),"The number of detected RBC is",len(liste1),"The number of detected PLT is",len(liste0))
