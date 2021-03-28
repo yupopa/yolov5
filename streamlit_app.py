@@ -47,7 +47,10 @@ else:
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
   
-
+    liste = []
+    liste2 = []
+    liste1 = []
+    liste0 = []
    
     for i in model.results.xywh:
         for j in i:
