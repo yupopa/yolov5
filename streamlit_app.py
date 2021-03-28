@@ -46,15 +46,25 @@ else:
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
-    
+    model.results.xywh
+
    
 
     
 
     
-    
     liste = []
+    liste2=[]
     for i in model.results.xywh:
         for j in i:
-            liste.append(j)
-    st.write("there are",len(liste)," object in this image")
+            for k in j:
+                if k == 2:
+                    liste.append(j)
+                    
+    for i in model.results.xywh:
+        for j in i:
+            for k in j:
+                if k == 1:
+                    liste2.append(j)
+
+    st.write("number of wbcs",len(liste),"number of rbcs",len(liste2))
