@@ -55,6 +55,7 @@ else:
     
     liste = []
     liste2=[]
+    liste3 = []
     for i in model.results.xywh:
         for j in i:
             for k in j:
@@ -66,5 +67,11 @@ else:
             for k in j:
                 if k == 1:
                     liste2.append(j)
+           
+    for i in model.results.xywh:
+        for j in i:
+            for k in j:
+                if k == 0:
+                    liste3.append(j)
 
-    st.write("number of wbc",len(liste),"number of rbc",len(liste2))
+    st.write("number of wbc",len(liste),"number of rbc",len(liste2),"number of Platelets",len(liste3))
