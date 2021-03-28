@@ -49,29 +49,16 @@ else:
   
 
    
-
-    
-
-    
-    liste = []
-    liste2=[]
-    liste3 = []
     for i in model.results.xywh:
         for j in i:
             for k in j:
+                liste.append(k)
                 if k == 2:
-                    liste.append(j)
-                    
-    for i in model.results.xywh:
-        for j in i:
-            for k in j:
-                if k == 1:
-                    liste2.append(j)
-           
-    for i in model.results.xywh:
-        for j in i:
-            for k in j:
-                if k == 0:
-                    liste3.append(j)
+                    liste2.append(k)
+                elif k ==1:
+                    liste1.append(k)
+                elif k == 0:
+                    liste0.append(k)
 
-    st.write("number of wbc",len(liste),"number of rbc",len(liste2),"number of Platelets",len(liste3))
+
+    st.write("number of wbc",len(liste2),"number of rbc",len(liste1),"number of Platelets",len(liste0))
