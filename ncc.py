@@ -27,7 +27,7 @@ urll = ("http://dl.dropboxusercontent.com/s/ecl4tj6q2u8s4q3/fig-03_5.png?raw=1")
 filenamee = "fig-03_5.png"
 urlretrieve(urll,filenamee)
 st.image(filenamee)
-st.write('# Blood Cell Count Object Detection')
+st.write('# KAN HÜCRESİ TESPİTİ')
 
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
@@ -46,17 +46,26 @@ else:
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
-    model.results.print()
-    
-
-    
-    
+  
     liste = []
+    liste1 = []
+    liste2 = []
+    liste0 = []
+
+
     for i in model.results.xywh:
         for j in i:
-            liste.append(j)
-    st.write("there are",len(liste)," object in this image")
+            for k in j:
+                liste.append(k)
+            if k ==2:
+                liste2.append(k)
+            elif k == 1:
+                liste1.append(k)
+            elif k == 0:
+                liste0.append(k)
 
+
+    st.write("The number of detected WBC is",len(liste2),"The number of detected RBC is",len(liste1),"The number of detected PLT is",len(liste0))
 
 
 
