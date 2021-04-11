@@ -45,7 +45,7 @@ else:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
 
-    model = torch.load('best.pt',map_location='cpu')
+    model = torch.hub.load('best.pt',map_location='cpu')
    
     
     model.results = model(img_array, size=640)
