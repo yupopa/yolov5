@@ -49,8 +49,8 @@ else:
    
     
     model.results = model(img_array, size=640)
-    model.results.save()  # or .show()
-    st.image("runs/hub/exp/image0.jpg")
+    model.results.save()
+    st.image("results/image0.jpg")
   
     liste = []
     liste1 = []
