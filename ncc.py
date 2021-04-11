@@ -29,7 +29,7 @@ urll = ("http://dl.dropboxusercontent.com/s/ecl4tj6q2u8s4q3/fig-03_5.png?raw=1")
 filenamee = "1.png"
 urlretrieve(urll,filenamee)
 st.image(filenamee)
-st.write('# KAN HÜCRESİ TESPİTİ')
+st.write('# LÖSEMİ TESPİT PLATFORMU ')
 
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
