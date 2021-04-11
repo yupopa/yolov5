@@ -45,9 +45,9 @@ if uploaded_file is None:
 else:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
+    model = net.load_state_dict(torch.load('best.pt', map_location=torch.device('cpu')))
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
     
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename).map_location=torch.device('cpu')
-   
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
