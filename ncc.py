@@ -73,7 +73,7 @@ else:
     st.write("Saptanan hücre sayısı")
     st.write("Beyaz Kan Hücresi:",len(liste0))
     st.write("Kırmızı Kan hücresi",len(liste1))
-    st.write("Blast hücres,",len(liste2))
+    st.write("Blast hücresi",len(liste2))
 
 
 
