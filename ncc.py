@@ -18,6 +18,7 @@ from io import StringIO
 from time import sleep
 import streamlit as st
 
+defaults.device = 'cpu'
 torch.cuda.set_device('cpu')
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
 
