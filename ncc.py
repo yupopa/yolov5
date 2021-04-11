@@ -44,7 +44,6 @@ if uploaded_file is None:
 else:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
-    map_location=torch.device('cpu')
     model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
