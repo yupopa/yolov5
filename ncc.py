@@ -44,7 +44,7 @@ if uploaded_file is None:
 else:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
-    model = torch.load(settings.MODEL_FILE, map_location={'cuda:0': 'cpu'})
+    model = torch.load(settings.filename, map_location={'cuda:0': 'cpu'})
 
     model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename).device("cpu")
     
