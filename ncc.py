@@ -20,12 +20,12 @@ import streamlit as st
 
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
-
 filename = "best.pt"
 urlretrieve(url,filename)
 
-urll = ("http://dl.dropboxusercontent.com/s/ecl4tj6q2u8s4q3/fig-03_5.png?raw=1")
 
+
+urll = ("http://dl.dropboxusercontent.com/s/ecl4tj6q2u8s4q3/fig-03_5.png?raw=1")
 filenamee = "1.png"
 urlretrieve(urll,filenamee)
 st.image(filenamee)
@@ -50,7 +50,7 @@ else:
     
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
-    st.image("results/image0.jpg")
+    
   
     liste = []
     liste1 = []
