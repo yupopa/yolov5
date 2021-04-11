@@ -18,7 +18,7 @@ from io import StringIO
 from time import sleep
 import streamlit as st
 
-
+map_location=torch.device('cpu')
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
 
