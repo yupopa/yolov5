@@ -70,7 +70,7 @@ else:
                 liste0.append(k)
 
 
-    st.write("The number of detected WBC is",len(liste2),"The number of detected RBC is",len(liste1),"The number of detected PLT is",len(liste0))
+    st.write("The number of detected WBC is",len(liste0),"The number of detected RBC is",len(liste1),"The number of detected BLAST CELL is",len(liste2))
 
 
 
