@@ -70,7 +70,7 @@ else:
                 liste0.append(k)
 
 
-    st.write("The number of detected WBC is",len(liste0),"RBC is",len(liste1),"BLAST CELL is",len(liste2))
+    st.write("Saptanan hücre sayısı",\n"Beyaz Kan Hücresi:"len(liste0),\n"Kırmızı Kan hücresi",len(liste1),\n"Blast hücres,",len(liste2))
 
 
 
