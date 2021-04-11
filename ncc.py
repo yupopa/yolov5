@@ -44,6 +44,9 @@ if uploaded_file is None:
 else:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
+    model = torch.load('best.pt', map_location=lambda storage, loc: storage.cuda(1))
+    
+    model = torch.load('best.pt', map_location={'cuda:1':'cuda:0'})
     model = torch.hub.load("ultralytics/yolov5", "custom", "best.pt")
    
     
