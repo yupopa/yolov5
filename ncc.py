@@ -70,7 +70,10 @@ else:
                 liste0.append(k)
 
 
-    st.write("Saptanan hücre sayısı",\n"Beyaz Kan Hücresi:",len(liste0),\n"Kırmızı Kan hücresi",len(liste1),\n"Blast hücres,",len(liste2))
+    st.write("Saptanan hücre sayısı")
+    st.write("Beyaz Kan Hücresi:",len(liste0))
+    st.write("Kırmızı Kan hücresi",len(liste1))
+    st.write("Blast hücres,",len(liste2))
 
 
 
