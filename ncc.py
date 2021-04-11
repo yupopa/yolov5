@@ -50,7 +50,7 @@ else:
     
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
-    st.image("runs/hub/exp15/image0.jpg")
+    st.image("runs/hub/exp20/image0.jpg")
   
     liste = []
     liste1 = []
