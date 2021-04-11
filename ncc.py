@@ -46,7 +46,7 @@ else:
     img_array = np.array(image)
 
     
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
+    model = torch.hub.load("ultralytics/yolov5", "custom", "best.pt", force_reload=True)
     
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
