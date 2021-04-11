@@ -46,7 +46,7 @@ else:
     image = Image.open(uploaded_file)
     img_array = np.array(image).device("cpu")
     
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename).device("cpu")
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename,map_location=torch.device('cpu'))
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
