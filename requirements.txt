@@ -18,6 +18,12 @@ keras
 tensorflow
 streamlit==0.76.0
 requests
+numpy
+streamlit
+torch==1.7.1
+torchvision==0.8.2
+fastai==2.2.7
+jupyter
 
 
 # logging -------------------------------------
