@@ -1,21 +1,8 @@
 import streamlit as st
-import requests
-import base64
-
 from PIL import Image
-
-
-
-
-
-
 from urllib.request import urlretrieve
 from fastai.vision.widgets import *
 from fastai.vision.all import *
-
-
-
-import streamlit as st
 
 
 url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
@@ -41,7 +28,7 @@ if uploaded_file is None:
 else:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path=filename)
     model.results = model(img_array, size=640)
     model.results.save()  # or .show()
     st.image("results/image0.jpg")
